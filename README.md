@@ -67,14 +67,14 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
 _Note! In between the installs of any packages specified here, if the package you've installed
 is still shown as missing after installation, you may need to close down & re-open your terminal window._
 
-1. Ensure you have a [recent](https://www.python.org/downloads/) version of `Python 3`.
-   Check your computer's `Python` version by running:
+1. Ensure you have a [recent](https://www.python.org/downloads/) version of **Python 3**.
+   Check your computer's **Python** version by running:
    ```sh
     python --version
    ```
    _(If you have 2 Python versions installed on your system (v2 and v3), the Python 3 command
    will be `python3` instead of `python`)_
-2. Check whether `Pip` package manager for Python installed. Run:
+2. Check whether **Pip** package manager for Python installed. Run:
    ```sh
     python -m pip --version
    ```
@@ -83,7 +83,7 @@ is still shown as missing after installation, you may need to close down & re-op
     python -m ensurepip
    ```
    to install it.
-3. Check whether `virtualenv` package is installed by running:
+3. Check whether **virtualenv** package is installed by running:
    ```sh
     python -m virtualenv --version
    ```
@@ -91,23 +91,23 @@ is still shown as missing after installation, you may need to close down & re-op
    ```sh
     pip install virtualenv
    ```
-   `However!` You may be on the system that prevents global package installs directly onto
+   **However!** You may be on the system that prevents global package installs directly onto
    your system. In cases such as this, you may beed to rely on your system's package manager.
-   Try search for `\-virtualenv` or `virtualenv` within your package manager. Using `apt`:
+   Try search for `\-virtualenv` or `virtualenv` within your package manager. Using **apt**:
    ```sh
     apt search '\-virtualenv'
    ```
-   Or using `pacman`:
+   Or using **pacman**:
    ```sh
     pacman -Ss '\-virtualenv'
    ```
    The package needed may either be named something like: `python-virtualenv` or `python3-virtualenv`.
-   Install it using your package manager, so for `apt`:
+   Install it using your package manager, so for **apt**:
    ```sh
     sudo apt update && sudo apt install package_name
    ```
-   For `pacman`
+   For **pacman**
    ```sh
     sudo pacman -Sy package_name
    ```
-4. You will need to have/install a text editor. `Visual Studio Code` is recommended.
+4. You will need to have/install a text editor. **Visual Studio Code** is recommended.
