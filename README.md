@@ -4,17 +4,20 @@ A collection of python scripts for doing data: clean-up, joining, and formatting
 This repository acts as a look up so the "wheel wouldn't need to be read about and assembled twice".
 
 # Using:
-- Ensure you have done the [Setup](#Setup) and prepared the [Dependencies](#Dependencies).
+- Ensure you have done the [Setup](#Setup) and have the [Dependencies](#Dependencies) installed.
 - The script files are located within the `src/` directory.
 - You can run any given script by either running `python` command with a relative path to the script file:
   ```sh
     python src/sample.py
   ```
-  or you can run using your code editor _(example: whilst having script file open in Visual Studio Code,
-  you can click the 'play' triangle icon in the top, right corner)_
-- Whilst creating new scripts or adding new code you may **introduce** new Pip packages into virtual environment.
-  Make sure you update the `requirements.txt` file after you have installed those packages _(otherwise anyone else
-  using this environment will not have the packages available to run your new code)_.
+  
+  Alternatively, you can launch the script using your code editor's functionality
+  _(for example: whilst having script file open in Visual Studio Code, you can click the 'play' triangle
+  icon in the top, right corner)_
+- Whilst creating new scripts or adding new code you may **introduce** new Pip packages into virtual environment
+   _(by doing pip install package_name)_.
+  Make sure you update the `requirements.txt` file after you have installed those packages _(otherwise others
+  setting up virtual environment for this project will not have the packages available to run your new code)_.
 
   To update the `requirement.txt` file, run:
   ```sh
@@ -23,8 +26,8 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
 
 # Setup
 1. **Ensure** you have all the needed dependencies _(see [Dependencies](#Dependencies) section)_.
-2. In order to avoid interfering with the Python package versions installed on your computer globally,
-   a virtual environment will be used that will contain the packages and their versions this project needs in isolation.
+2. To avoid interfering with the Python Pip packages installed on your computer, and/or to avoid the need to manage their versions,
+   a virtual environment will be used that will wrap around this project and contain the packages this project needs in isolation.
    
    To create a virtual environment for this project, once your terminal window is within the folder directory
    of this project, run:
@@ -33,8 +36,8 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
    ```
 3. After the virtual environment is created, it needs to be **activated**.
    
-   _This step needs to be every time you want to use this project as the environment automatically `deactivate`'s once
-   your terminal window is closed._
+   _This step needs to be every time you want to use this project and run its code because the environment
+   automatically `deactivate`'s once your terminal window is closed._
 
    **To active** the environment:
    - Linux / MacOS: Run:
@@ -43,25 +46,28 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
     ```
     - Windows: Run:
     `./venv/Scripts/activate.bat` or `./venv/Scripts/activate.ps1` _(whichever works)_.
-4. _(Optional)_ If all was successful, you should be within the Python's virtual environment.
-   You can verify that by running `echo $VIRTUAL_ENV` on Linux, or Windows: `echo %VIRTUAL_ENV%`.
-   The output directory path should point to `venv`: `.../datamunge/venv`.
+4. _(Optional)_ If all was successful, your terminal's session should be within the Python's virtual environment.
+   You can verify that by running `echo $VIRTUAL_ENV` on Linux, or `echo %VIRTUAL_ENV%` on Windows.
+   The output directory path should point to `venv`. Trimmed example: `.../datamunge/venv`.
    
-   Additionally, if your
-   virtual environment has been freshly created, it will only have 1 _(pip)_ package installed within it
+   Additionally, if your virtual environment has been freshly created, it will only have 1 _(pip)_ package installed within it,
+   run `pip list` to see the packages installed inside the virtual environment.
 5. Lastly, once within the virtual environment, install all of the packages the project needs by running:
    ```sh
     pip install -r requirements.txt
    ```
-6. _(Conditional)_ If you have already done the virtual environment setup in the past, and installed the packages it needs
-   it is possible that since then the project has started requiring a few extra packages that you don't have installed. You
-   may notice this by getting missing package import errors whilst attempting to run some of the code here.
+   _(If you run `pip list` again, you will notice that the list of installed packages within the environmnent has grown.)_
+6. _(Conditional)_ **Refer to this if you have already done the virtual environment setup in the past**, and installed the
+   packages it needs.
+   
+   It's possible that since your last setup the project has introduced new packages that you don't have installed **yet**.
+   You may notice this by getting missing package import errors whilst attempting to run some of the code within the project.
    
    **To ensure** your previously created environment is **up-to-date**, run: 
    ```sh
     pip install --upgrade -r requirements.txt
    ```
-   to upgrade old package versions, or to install new missing packages.
+   to upgrade old package versions, and/or to install new missing packages.
 
 # Dependencies
 _Note! In between the installs of any packages specified here, if the package you've installed
@@ -102,7 +108,8 @@ is still shown as missing after installation, you may need to close down & re-op
     pacman -Ss '\-virtualenv'
    ```
    The package needed may either be named something like: `python-virtualenv` or `python3-virtualenv`.
-   Install it using your package manager, so for **apt**:
+
+   Install it using your package manager. For **apt**:
    ```sh
     sudo apt update && sudo apt install package_name
    ```
