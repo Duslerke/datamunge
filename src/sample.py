@@ -15,13 +15,15 @@ df2 = pd.DataFrame({
 })
 
 # List of all desired columns
-all_columns = ['a', 'b', 'c', 'd', 'e', 'f']
+all_columns = list(set(['a','c', 'b', 'd', 'e', 'f']))
 
 # Reindex the DataFrames to have the same columns and fill missing columns with None
-df1_reindexed = df1.reindex(columns=all_columns)
-df2_reindexed = df2.reindex(columns=all_columns)
+df1_reindexed = df1.reindex(columns=all_columns, fill_value=None)
+df2_reindexed = df2.reindex(columns=all_columns, fill_value=None)
 
 # Concatenate the DataFrames
 combined_df = pd.concat([df1_reindexed, df2_reindexed], ignore_index=True)
+
+combined_df.insert(loc=0, column='Year', value='2022')
 
 print(combined_df)

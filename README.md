@@ -26,7 +26,11 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
 
 # Setup
 1. **Ensure** you have all the needed dependencies _(see [Dependencies](#Dependencies) section)_.
-2. To avoid interfering with the Python Pip packages installed on your computer, and/or to avoid the need to manage their versions,
+2. Go into your 'Projects' directory and clone down this repository by running:
+   ```sh
+    git clone https://github.com/Duslerke/datamunge.git`
+   ```
+3. To avoid interfering with the Python Pip packages installed on your computer, and/or to avoid the need to manage their versions,
    a virtual environment will be used that will wrap around this project and contain the packages this project needs in isolation.
    
    To create a virtual environment for this project, once your terminal window is within the folder directory
@@ -34,30 +38,30 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
    ```sh
     python3 -m venv venv
    ```
-3. After the virtual environment is created, it needs to be **activated**.
+4. After the virtual environment is created, it needs to be **activated**.
    
    _This step needs to be every time you want to use this project and run its code because the environment
    automatically `deactivate`'s once your terminal window is closed._
 
    **To active** the environment:
-   - Linux / MacOS: Run:
+   - On Linux run:
     ```sh
         source venv/bin/activate
     ```
     - Windows: Run:
     `./venv/Scripts/activate.bat` or `./venv/Scripts/activate.ps1` _(whichever works)_.
-4. _(Optional)_ If all was successful, your terminal's session should be within the Python's virtual environment.
+5. _(Optional)_ If all was successful, your terminal's session should be within the Python's virtual environment.
    You can verify that by running `echo $VIRTUAL_ENV` on Linux, or `echo %VIRTUAL_ENV%` on Windows.
    The output directory path should point to `venv`. Trimmed example: `.../datamunge/venv`.
    
    Additionally, if your virtual environment has been freshly created, it will only have 1 _(pip)_ package installed within it,
    run `pip list` to see the packages installed inside the virtual environment.
-5. Lastly, once within the virtual environment, install all of the packages the project needs by running:
+6. Lastly, once within the virtual environment, install all of the packages the project needs by running:
    ```sh
     pip install -r requirements.txt
    ```
    _(If you run `pip list` again, you will notice that the list of installed packages within the environmnent has grown.)_
-6. _(Conditional)_ **Refer to this if you have already done the virtual environment setup in the past**, and installed the
+7. _(Conditional)_ **Refer to this if you have already done the virtual environment setup in the past**, and installed the
    packages it needs.
    
    It's possible that since your last setup the project has introduced new packages that you don't have installed **yet**.
@@ -72,15 +76,17 @@ This repository acts as a look up so the "wheel wouldn't need to be read about a
 # Dependencies
 _Note! In between the installs of any packages specified here, if the package you've installed
 is still shown as missing after installation, you may need to close down & re-open your terminal window._
-
-1. Ensure you have a [recent](https://www.python.org/downloads/) version of **Python 3**.
+1. Check whether you have **git** installed by running `git --version`. If it's not installed, then:
+   - On Linux: using **apt** run: `sudo apt install git`, if using **pacman** run: `sudo pacman -Sy git` 
+   - On Windows: install [git bash](https://git-scm.com/downloads).
+2. Ensure you have a [recent](https://www.python.org/downloads/) version of **Python 3**.
    Check your computer's **Python** version by running:
    ```sh
     python --version
    ```
    _(If you have 2 Python versions installed on your system (v2 and v3), the Python 3 command
    will be `python3` instead of `python`)_
-2. Check whether **Pip** package manager for Python installed. Run:
+3. Check whether **Pip** package manager for Python installed. Run:
    ```sh
     python -m pip --version
    ```
@@ -89,7 +95,7 @@ is still shown as missing after installation, you may need to close down & re-op
     python -m ensurepip
    ```
    to install it.
-3. Check whether **virtualenv** package is installed by running:
+4. Check whether **virtualenv** package is installed by running:
    ```sh
     python -m virtualenv --version
    ```
@@ -117,4 +123,4 @@ is still shown as missing after installation, you may need to close down & re-op
    ```sh
     sudo pacman -Sy package_name
    ```
-4. You will need to have/install a text editor. **Visual Studio Code** is recommended.
+5. You will need to have/install a text editor. **Visual Studio Code** is recommended.
