@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "ms-python.python", // Python extension for linting and other features
+    // "ms-python.black-formatter", // Black formatter extension
+    // "ms-python.vscode-pylance" // Pylance for Python language support
+  ]
+}
